@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConectaIA | Soluciones automatizadas con Inteligencia Artificial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Opcional: Estilos para el scroll suave, mejorando la experiencia de usuario */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#inicio" class="text-2xl font-bold text-indigo-600">
+                <img src="images/logo.jpg" alt="Logo ConectaIA" class="h-8 inline-block mr-2">
+                ConectaIA
+            </a>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#servicios" class="text-gray-600 hover:text-indigo-600 font-medium">Servicios</a>
+                <a href="#acerca" class="text-gray-600 hover:text-indigo-600 font-medium">Acerca de</a>
+                <a href="#contacto" class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg font-medium transition duration-300">Contáctanos</a>
+            </div>
+
+            <button id="menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:text-indigo-600 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t">
+            <a href="#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Servicios</a>
+            <a href="#acerca" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Acerca de</a>
+            <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-600">Contáctanos</a>
+        </div>
+    </header>
+
+    <section id="inicio" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
+                Tu socio en <span class="text-indigo-600">Inteligencia Artificial</span> para el crecimiento de tu negocio.
+            </h1>
+            <p class="mt-6 text-xl text-gray-600">
+                Transformamos datos en decisiones inteligentes. Soluciones automatizadas con IA a la medida de tu negocio.
+            </p>
+            <div class="mt-10 flex space-x-4">
+                <a href="#servicios" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300">
+                    Ver Servicios
+                </a>
+                <a href="#contacto" class="px-8 py-3 border border-indigo-600 text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-300">
+                    Agenda una Consulta
+                </a>
+            </div>
+        </div>
+        
+        <div class="md:w-1/2 md:pl-12">
+            
+            <img src="images/Banner_2_ConectaIA.jpg" alt="Banner ConectaIA - IA para negocios" class="rounded-xl shadow-2xl">
+        </div>
+    </section>
+
+    <section id="servicios" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Nuestros Productos y Soluciones</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Transformando Datos en Valor con IA
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    ConectaIA ofrece soluciones de Inteligencia Artificial que optimizan procesos repetitivos, mejoran la toma de decisiones y desbloquean nuevas fuentes de ingresos. Tu empresa y tu equipo te lo agradecerán.
+                </p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                
+                <div class="pt-6">
+                    <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8 h-full">
+                        <div class="pt-4">
+                            <img src="images/servicio01.jpg" alt="Estrategia y Roadmap de IA" class="w-full h-auto rounded-lg shadow-md mb-6">
+
+                            <h3 class="mt-8 text-xl font-bold tracking-tight text-gray-900">Estrategia y Roadmap de IA</h3>
+                            <p class="mt-5 text-base text-gray-500">
+                                Lideramos la transformación digital de tu empresa. Creamos una hoja de ruta 100% personalizada que alinea la Inteligencia Artificial con tus objetivos de negocio, garantizando el máximo retorno de inversión (ROI) y una ventaja competitiva sostenible.
+                            </p>
+                            <a href="#contacto" class="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">Saber más &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8 h-full">
+                        <div class="pt-4">
+                            <img src="images/servicio02.jpg" alt="Automatización Inteligente" class="w-full h-auto rounded-lg shadow-md mb-6">
+                            
+                            <h3 class="mt-8 text-xl font-bold tracking-tight text-gray-900">Automatización Inteligente</h3>
+                            <p class="mt-5 text-base text-gray-500">
+                                Implementamos bots y soluciones de RPA (Robotic Process Automation) impulsadas por IA para eliminar tareas repetitivas, reducir costos operativos y usar tu talento humano en forma eficiente.
+                            </p>
+                            <a href="#contacto" class="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">Saber más &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6">
+                    <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8 h-full">
+                        <div class="pt-4">
+                            <img src="images/Servicio03.jpg" alt="Atención al Cliente con IA" class="w-full h-auto rounded-lg shadow-md mb-6">
+
+                            <h3 class="mt-8 text-xl font-bold tracking-tight text-gray-900">Atención al Cliente con IA</h3>
+                            <p class="mt-5 text-base text-gray-500">
+                                Desarrollamos y desplegamos chatbots y asistentes virtuales avanzados para servicio 24/7, mejorando la satisfacción del cliente y la eficiencia.
+                            </p>
+                            <a href="#contacto" class="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">Saber más &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-xl font-medium text-gray-700">¿Tienes un proyecto único, un proyecto en mente? Deseas que te ayudemos con una auditoría de tu operación o de tu web y ayudándote a solucionar las áreas de mejora?</p>
+                <a href="#contacto" class="mt-2 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300">
+                    Hablemos
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="acerca" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                
+                <div class="lg:col-span-6">
+                    <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Nuestra Misión</h2>
+                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                        Expertos en IA al servicio de tu Crecimiento
+                    </p>
+                    <p class="mt-4 text-xl text-gray-500">
+                        Nacimos en Colombia con la misión de democratizar el acceso a la Inteligencia Artificial, ofreciendo soluciones prácticas y medibles para empresas que buscan una ventaja competitiva en el mercado. Este es el momento de transformar tu negocio con IA, cojer ventaja sobre tu competencia y en ConectaIA estamos aquí para hacerlo posible.
+                    </p>
+                    <div class="mt-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">
+                                    <strong class="font-bold">Enfoque Local:</strong> Conocemos las necesidades y la legislación del ecosistema empresarial colombiano.
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">
+                                    <strong class="font-bold">Resultados Comprobados:</strong> Implementaciones sencillas y eficaces que garantizan un Retorno de la Inversión (ROI) claro.
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <p class="ml-3 text-base text-gray-700">
+                                    <strong class="font-bold">Tecnología de Punta:</strong> Uso de las herramientas de IA más avanzadas y modernas del mercado. Automatizamos tus procesos con las mejores tecnologías disponibles. Rapida y eficazmente. Y con un servico al cliente excepcional. No te dejaremos solo. Te acompañamos en todo el proceso y más allá.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-10 lg:mt-0 lg:col-span-6 flex justify-center items-center">
+                    
+                    <img class="rounded-xl shadow-2xl max-w-full h-auto" 
+                         src="images/Banner_2_ConectaIA.jpg" 
+                         alt="Equipo de ConectaIA trabajando en Inteligencia Artificial">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacto" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Conversemos sobre tu Proyecto.
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Tu solicitud se procesará de inmediato. Nos contactaremos contigo en menos de 24 horas para agendar una reunión virtual de 20-30 minutos y brindarte una auditoría inicial GRATIS*.
+                </p>
+            </div>
+
+            <div class="max-w-lg mx-auto bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200">
+                
+                <div id="mensaje-exito" class="hidden text-center py-10">
+                    <svg class="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">¡Tu solicitud fue enviada!</h3>
+                    <p class="text-lg text-gray-700">
+                        Ya está en manos de nuestro equipo. Revisa tu correo, te contactaremos en breve para agendar la reunión virtual.
+                    </p>
+                </div>
+                
+                <form id="contact-form" action="https://formspree.io/f/xpwvworg" method="POST" class="space-y-6">
+                    
+                    <div>
+                        <label for="full-name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
+                        <input type="text" name="full-name" id="full-name" required
+                               class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                        <input type="email" name="email" id="email" required
+                               class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+
+                    <div>
+                        <label for="project-details" class="block text-sm font-medium text-gray-700">Cuéntanos sobre tu proyecto</label>
+                        <textarea name="project-details" id="project-details" rows="4" required
+                                  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="data-policy" name="data-policy" type="checkbox" required
+                                   class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="data-policy" class="font-medium text-gray-700">
+                                Acepto la <a href="politica-privacidad.html" target="_blank" class="text-indigo-600 hover:text-indigo-800 underline">Política de Tratamiento de Datos Personales</a>.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" 
+                                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300">
+                            Enviar Solicitud
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="max-w-lg mx-auto mt-8 px-4 text-center">
+            <small class="text-xs text-gray-500 block">
+                *Auditoría Sin Costo: Consiste en un **Análisis Preliminar de Necesidades (Assessment)** y una evaluación diagnóstica rápida de su infraestructura (incluyendo el sitio web existente, si aplica). Este diagnóstico se ofrece durante la consulta inicial de 20-30 minutos y el resumen de las soluciones se envía posteriormente a su correo. La **Auditoría Plus o Detallada** (que incluye análisis profundo de datos y sistemas) es un servicio que solo se proporciona, cotiza y especifica como parte de la propuesta comercial final en caso de formalización y contratación de nuestros servicios.
+            </small>
+        </div>
+        </div>
+    </section>
+  
+    <footer class="bg-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-indigo-400 tracking-wider uppercase">Contacto</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><p class="text-base text-gray-300">Email: info@conectaia.cloud</p></li>
+                        <li><p class="text-base text-gray-300">Colombia</p></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-indigo-400 tracking-wider uppercase">Navegación</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="#servicios" class="text-base text-gray-300 hover:text-white">Servicios</a></li>
+                        <li><a href="#acerca" class="text-base text-gray-300 hover:text-white">Acerca de</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-indigo-400 tracking-wider uppercase">Legal</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="politica-privacidad.html" class="text-base text-gray-300 hover:text-white">Política de Privacidad</a></li> 
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-indigo-400 tracking-wider uppercase">Síguenos</h3>
+                    <ul role="list" class="mt-4 space-y-4">
+                        <li><a href="https://facebook.com/tupagina" class="text-base text-gray-300 hover:text-white">Facebook</a></li>
+                        <li><a href="https://linkedin.com/tuperfil" class="text-base text-gray-300 hover:text-white">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-800 pt-8">
+                <p class="text-base text-gray-400 text-center">
+                    &copy; 2025 ConectaIA. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. FUNCIONALIDAD DEL MENÚ MÓVIL (HAMBURGUESA)
+        document.getElementById('menu-button').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 2. FUNCIONALIDAD DEL FORMULARIO CON AJAX (Vacía y Muestra Éxito)
+        var form = document.getElementById('contact-form');
+        var successMessage = document.getElementById('mensaje-exito');
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault(); // Detiene la redirección por defecto de Formspree
+
+            var data = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Si el envío fue exitoso:
+                    successMessage.classList.remove('hidden'); // Muestra el mensaje de éxito
+                    form.classList.add('hidden'); // Oculta el formulario de contacto
+                    form.reset(); // Vacia el formulario (aunque ya esté oculto)
+                } else {
+                    // Si hubo un error en Formspree:
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert("Error de Formulario: " + data["errors"].map(error => error["message"]).join(", "))
+                        } else {
+                            alert("¡Ocurrió un error al enviar el formulario! Por favor, inténtalo de nuevo.")
+                        }
+                    })
+                }
+            }).catch(error => {
+                // Si hubo un error de conexión:
+                alert("¡Error de conexión! Por favor, verifica tu red e inténtalo de nuevo.");
+            });
+        });
+    </script>
+</body>
+</html>
