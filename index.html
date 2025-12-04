@@ -4,338 +4,662 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="facebook-domain-verification" content="r70ewy2eb9wb477ayorvmcwns2ype2" />
-    <title>ConectaIA | Soluciones automatizadas con Inteligencia Artificial</title>
+    <meta name="description" content="Automatización con IA para empresas. Recupera tiempo y dinero automatizando procesos repetitivos. Auditoría gratis.">
+    <title>ConectaIA | Soluciones Automatizadas con IA - Recupera tu Tiempo</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        conecta: {
+                            dark: '#0f172a', /* Azul oscuro banner */
+                            primary: '#4f46e5', /* Indigo */
+                            accent: '#0ea5e9', /* Cyan/Azul claro logo */
+                            green: '#22c55e', /* Verde logo */
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Opcional: Estilos para el scroll suave, mejorando la experiencia de usuario */
-        html {
-            scroll-behavior: smooth;
+        html { scroll-behavior: smooth; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        /* Animación para resaltar bordes */
+        @keyframes border-glow {
+            0%, 100% { border-color: #4f46e5; box-shadow: 0 0 10px rgba(79, 70, 229, 0.2); }
+            50% { border-color: #0ea5e9; box-shadow: 0 0 20px rgba(14, 165, 233, 0.4); }
+        }
+        .animate-border-glow {
+            animation: border-glow 3s infinite;
+        }
+        /* --- NUEVOS ESTILOS INTERACTIVOS --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 text-white py-3 px-4 text-center sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3">
+            <span class="text-yellow-300 font-bold animate-pulse">🔥 VENTANA DE OPORTUNIDAD 2025:</span>
+            <span class="text-sm sm:text-base">Solo 3 espacios disponibles esta semana para auditoría express</span>
+            <div class="bg-white/20 px-3 py-1 rounded font-mono text-sm font-bold" id="countdown-timer">
+                03d 12h 45m
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white shadow-md sticky top-12 z-40">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#inicio" class="text-2xl font-bold text-indigo-600">
-                <img src="images/logo.jpg" alt="Logo ConectaIA" class="h-8 inline-block mr-2">
-                ConectaIA
+            <a href="#inicio" class="text-2xl font-bold text-indigo-600 flex items-center gap-2">
+                <img src="images/logo.jpg" alt="Logo ConectaIA" class="h-10 w-auto object-contain">
+                <span class="hidden sm:inline">ConectaIA</span>
             </a>
             
-            <div class="hidden md:flex space-x-8">
-                <a href="#servicios" class="text-gray-600 hover:text-indigo-600 font-medium">Servicios</a>
-                <a href="#acerca" class="text-gray-600 hover:text-indigo-600 font-medium">Acerca de</a>
-                <a href="#contacto" class="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg font-medium transition duration-300">Contáctanos</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#calculadora" class="text-gray-600 hover:text-indigo-600 font-medium transition">Calculadora ROI</a>
+                <a href="#casos" class="text-gray-600 hover:text-indigo-600 font-medium transition">Casos Reales</a>
+                <a href="#contacto" class="text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 px-6 py-2 rounded-lg font-bold transition duration-300 shadow-lg transform hover:-translate-y-0.5">
+                    Agenda AHORA →
+                </a>
             </div>
 
-            <button id="menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:text-indigo-600 focus:outline-none">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+            <button id="menu-button" class="md:hidden p-2 text-gray-700">
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
             </button>
         </nav>
 
-        <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50 border-t">
-            <a href="#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Servicios</a>
-            <a href="#acerca" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-200">Acerca de</a>
-            <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-600">Contáctanos</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full z-50">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#calculadora" class="block text-gray-700 font-medium hover:text-indigo-600">Calculadora ROI</a>
+                <a href="#casos" class="block text-gray-700 font-medium hover:text-indigo-600">Casos Reales</a>
+                <a href="#contacto" class="block w-full text-center bg-indigo-600 text-white font-bold py-3 rounded-lg">Agenda AHORA</a>
+            </div>
         </div>
     </header>
 
-    <section id="inicio" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32 flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-10 md:mb-0">
-            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
-                Tu socio en <span class="text-indigo-600">Inteligencia Artificial</span> para el crecimiento de tu negocio.
-            </h1>
-            <p class="mt-6 text-xl text-gray-600">
-                Transformamos datos en decisiones inteligentes. Soluciones automatizadas con IA a la medida de tu negocio.
-            </p>
-            <div class="mt-10 flex space-x-4">
-                <a href="#servicios" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300">
-                    Ver Servicios
-                </a>
-                <a href="#contacto" class="px-8 py-3 border border-indigo-600 text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-300">
-                    Agenda una Consulta
-                </a>
-            </div>
-        </div>
+    <section id="inicio" class="relative overflow-hidden pt-12 pb-20 lg:pt-20">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-indigo-50 to-white -z-10"></div>
         
-        <div class="md:w-1/2 md:pl-12">
-            
-            <img src="images/Banner_2_ConectaIA.jpg" alt="Banner ConectaIA - IA para negocios" class="rounded-xl shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                    ¿Cuánto dinero estás <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-pink-600">tirando a la basura</span><br class="hidden md:block" />
+                    en tareas manuales?
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                    Empresas como la tuya recuperan <strong class="text-indigo-600">$50,000+ USD al año</strong> automatizando procesos con IA.
+                </p>
+            </div>
+
+            <div id="calculadora" class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl border-2 border-indigo-100 overflow-hidden animate-border-glow">
+                <div class="bg-gray-50 p-6 md:p-8 border-b border-gray-200">
+                    <h2 class="text-2xl font-bold text-center text-gray-800 flex items-center justify-center gap-2">
+                        📊 Calcula tu Pérdida Real
+                    </h2>
+                    <p class="text-center text-sm text-gray-500 mt-1">Mueve los controles para ver tus datos</p>
+                </div>
+                
+                <div class="p-6 md:p-10 grid md:grid-cols-2 gap-10">
+                    <div class="space-y-8">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Horas semanales perdidas en tareas manuales:</label>
+                            <div class="flex items-center gap-3">
+                                <input type="range" id="horas" min="0" max="60" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                                <span class="text-xl font-bold text-indigo-600 w-16 text-right" id="val-horas">10h</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-1">(Emails, agendamiento, facturas, excel)</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-2">Costo promedio por hora (Equipo):</label>
+                            <div class="flex items-center gap-3">
+                                <span class="text-gray-500 font-bold">$</span>
+                                <input type="number" id="costo" value="15" class="w-full border-2 border-gray-300 rounded-lg px-3 py-2 font-bold text-gray-700 focus:border-indigo-500 focus:outline-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-gray-900 to-indigo-900 rounded-xl p-6 text-white flex flex-col justify-center text-center relative overflow-hidden">
+                        <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500 rounded-full blur-3xl opacity-30"></div>
+                        
+                        <p class="text-gray-300 text-sm mb-2 uppercase tracking-wide">Estás perdiendo al mes:</p>
+                        <div class="text-4xl font-bold text-red-400 mb-6" id="res-mes">$2,600 USD</div>
+                        
+                        <div class="border-t border-white/20 pt-4">
+                            <p class="text-gray-300 text-sm mb-2 uppercase tracking-wide">Podrías recuperar al año:</p>
+                            <div class="text-5xl font-extrabold text-conecta-green text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300" id="res-ano">
+                                $31,200 USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 text-center">
+                    <a href="#contacto" class="inline-block w-full md:w-auto px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                        QUIERO RECUPERAR ESE DINERO →
+                    </a>
+                    <p class="mt-3 text-xs text-gray-500">Sin compromiso. Auditoría inicial gratuita.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="servicios" class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="py-20 bg-white" id="dolores-interactivos">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+                La pregunta no es <span class="text-indigo-600">SI</span> automatizar...
+            </h2>
+            <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-500 mb-12">
+                Es <span class="text-red-600 underline decoration-4 decoration-red-200">CUÁNDO</span> te va a comer la competencia.
+            </h3>
             
-            <div class="text-center mb-12">
-                <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Nuestros Productos y Soluciones</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Transformando Datos en Valor con IA
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                    ConectaIA ofrece soluciones de Inteligencia Artificial que optimizan procesos repetitivos, mejoran la toma de decisiones y desbloquean nuevas fuentes de ingresos. Tu empresa y tu equipo te lo agradecerán.
-                </p>
+            <p class="text-center text-sm text-gray-400 mb-8 animate-pulse">
+                👇 Haz clic en las tarjetas que te identifiquen para ver tu potencial de ahorro 👇
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                
+                <div onclick="transformCard(this, 950000)" class="card-interaction group relative p-6 bg-red-50 border-l-8 border-red-500 rounded-lg cursor-pointer transition-all duration-500 hover:shadow-xl hover:-translate-y-1 select-none">
+                    <div class="pain-content">
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">😫</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-red-900 mb-2">Equipo Saturado</h4>
+                                <p class="text-gray-700 text-lg">¿Tu personal responde las mismas 20 preguntas todo el día en lugar de vender?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gain-content hidden">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="text-3xl">🤖</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-green-800 mb-1">Equipo Enfocado en Ventas</h4>
+                                <p class="text-green-700 font-bold text-lg">Ahorro: ~$950,000 COP/mes</p>
+                                <p class="text-xs text-green-600">(Equivale a recuperar medio salario mínimo operativo)</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-green-200 pt-2 mt-2 opacity-60">
+                            <p class="text-xs text-gray-500 line-through">Tu personal responde las mismas 20 preguntas todo el día...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="transformCard(this, 380000)" class="card-interaction group relative p-6 bg-red-50 border-l-8 border-red-500 rounded-lg cursor-pointer transition-all duration-500 hover:shadow-xl hover:-translate-y-1 select-none">
+                    <div class="pain-content">
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">📅</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-red-900 mb-2">Caos en Agendamiento</h4>
+                                <p class="text-gray-700 text-lg">¿Pierdes clientes porque confirmar una cita toma 4 emails y 2 horas?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gain-content hidden">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="text-3xl">⚡</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-green-800 mb-1">Agenda Llena Automática</h4>
+                                <p class="text-green-700 font-bold text-lg">Recuperas: ~20 horas/mes</p>
+                                <p class="text-xs text-green-600">(Tiempo vale oro: aprox $380,000 COP en gestión)</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-green-200 pt-2 mt-2 opacity-60">
+                            <p class="text-xs text-gray-500 line-through">Pierdes clientes porque confirmar una cita toma 4 emails...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="transformCard(this, 1900000)" class="card-interaction group relative p-6 bg-red-50 border-l-8 border-red-500 rounded-lg cursor-pointer transition-all duration-500 hover:shadow-xl hover:-translate-y-1 select-none">
+                    <div class="pain-content">
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">💸</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-red-900 mb-2">Costos Inflados</h4>
+                                <p class="text-gray-700 text-lg">¿Pagas salarios humanos por tareas repetitivas que un bot hace gratis?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gain-content hidden">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="text-3xl">💰</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-green-800 mb-1">Reducción de Nómina</h4>
+                                <p class="text-green-700 font-bold text-lg">Ahorro: ~$1,900,000 COP/mes</p>
+                                <p class="text-xs text-green-600">(Costo empresa de 1 SMMLV que dejas de gastar en tareas robot)</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-green-200 pt-2 mt-2 opacity-60">
+                            <p class="text-xs text-gray-500 line-through">Pagas salarios humanos por tareas repetitivas...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="transformCard(this, 1500000)" class="card-interaction group relative p-6 bg-red-50 border-l-8 border-red-500 rounded-lg cursor-pointer transition-all duration-500 hover:shadow-xl hover:-translate-y-1 select-none">
+                    <div class="pain-content">
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">🐌</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-red-900 mb-2">Lentitud al Responder</h4>
+                                <p class="text-gray-700 text-lg">Tus clientes quieren respuestas YA. Si tardas 1 hora, se van con el vecino.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gain-content hidden">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="text-3xl">🚀</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-green-800 mb-1">Respuesta Instantánea</h4>
+                                <p class="text-green-700 font-bold text-lg">Ventas Recuperadas: +30%</p>
+                                <p class="text-xs text-green-600">(Al responder en segundos, capturas al cliente caliente)</p>
+                            </div>
+                        </div>
+                        <div class="border-t border-green-200 pt-2 mt-2 opacity-60">
+                            <p class="text-xs text-gray-500 line-through">Tus clientes quieren respuestas YA. Si tardas 1 hora...</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                
-                <div class="pt-6">
-                    <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8 h-full">
-                        <div class="pt-4">
-                            <img src="images/servicio01.jpg" alt="Estrategia y Roadmap de IA" class="w-full h-auto rounded-lg shadow-md mb-6">
-
-                            <h3 class="mt-8 text-xl font-bold tracking-tight text-gray-900">Estrategia y Roadmap de IA</h3>
-                            <p class="mt-5 text-base text-gray-500">
-                                Lideramos la transformación digital de tu empresa. Creamos una hoja de ruta 100% personalizada que alinea la Inteligencia Artificial con tus objetivos de negocio, garantizando el máximo retorno de inversión (ROI) y una ventaja competitiva sostenible.
-                            </p>
-                            <a href="#contacto" class="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">Saber más &rarr;</a>
-                        </div>
-                    </div>
+            <div id="dynamic-cta-container" class="hidden mt-12 transition-all duration-700 ease-out transform translate-y-4 opacity-0">
+                <div class="bg-gray-900 text-white rounded-xl p-8 max-w-3xl mx-auto shadow-2xl border-2 border-indigo-500 text-center">
+                    <h3 class="text-2xl font-bold mb-2">¡Es tu caso! 😮</h3>
+                    <p class="text-lg text-gray-300 mb-6">
+                        Has marcado <span id="count-clicks" class="font-bold text-yellow-400 text-2xl">0</span> problemas que te están costando dinero.
+                        <br>Podrías estar ahorrando más de <span id="total-savings" class="font-bold text-green-400">$0</span> COP al mes.
+                    </p>
+                    <a href="#contacto" class="inline-block px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold rounded-full shadow-lg transform hover:scale-105 transition animate-bounce">
+                        👉 Solicitar Auditoría Express GRATUITA
+                    </a>
+                    <p class="mt-4 text-xs text-gray-400">Deja de perder dinero hoy mismo.</p>
                 </div>
-
-                <div class="pt-6">
-                    <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8 h-full">
-                        <div class="pt-4">
-                            <img src="images/servicio02.jpg" alt="Automatización Inteligente" class="w-full h-auto rounded-lg shadow-md mb-6">
-                            
-                            <h3 class="mt-8 text-xl font-bold tracking-tight text-gray-900">Automatización Inteligente</h3>
-                            <p class="mt-5 text-base text-gray-500">
-                                Implementamos bots y soluciones de RPA (Robotic Process Automation) impulsadas por IA para eliminar tareas repetitivas, reducir costos operativos y usar tu talento humano en forma eficiente.
-                            </p>
-                            <a href="#contacto" class="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">Saber más &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-6">
-                    <div class="flow-root bg-gray-100 rounded-lg px-6 pb-8 h-full">
-                        <div class="pt-4">
-                            <img src="images/Servicio03.jpg" alt="Atención al Cliente con IA" class="w-full h-auto rounded-lg shadow-md mb-6">
-
-                            <h3 class="mt-8 text-xl font-bold tracking-tight text-gray-900">Atención al Cliente con IA</h3>
-                            <p class="mt-5 text-base text-gray-500">
-                                Desarrollamos y desplegamos chatbots y asistentes virtuales avanzados para servicio 24/7, mejorando la satisfacción del cliente y la eficiencia.
-                            </p>
-                            <a href="#contacto" class="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-medium">Saber más &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
-            
-            <div class="mt-12 text-center">
-                <p class="text-xl font-medium text-gray-700">¿Tienes un proyecto único, un proyecto en mente? Deseas que te ayudemos con una auditoría de tu operación o de tu web y ayudándote a solucionar las áreas de mejora?</p>
-                <a href="#contacto" class="mt-2 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300">
-                    Hablemos
+
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="images/Banner_2_ConectaIA.jpg" class="w-full h-full object-cover" alt="Fondo Tech">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-gray-900 z-0"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-8">
+                Estamos en 2025. La IA no es el futuro.
+            </h2>
+            <div class="inline-block bg-yellow-400 text-gray-900 text-2xl md:text-4xl font-black px-6 py-2 transform -rotate-2 mb-10 shadow-lg">
+                ES EL PRESENTE
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-left mt-8">
+                <div class="bg-white/10 backdrop-blur border border-white/20 p-6 rounded-xl">
+                    <div class="text-gray-400 font-mono text-sm mb-2">2024</div>
+                    <h4 class="text-xl font-bold mb-2">IA Experimental</h4>
+                    <p class="text-sm text-gray-300">Pocos se atrevieron. Hubo mucho ruido y poca implementación real.</p>
+                </div>
+                <div class="bg-indigo-600/30 backdrop-blur border-2 border-indigo-500 p-6 rounded-xl transform md:scale-110 shadow-2xl relative">
+                    <div class="absolute -top-3 right-4 bg-green-500 text-xs font-bold px-2 py-1 rounded text-white animate-pulse">ESTÁS AQUÍ</div>
+                    <div class="text-indigo-300 font-mono text-sm mb-2">2025</div>
+                    <h4 class="text-xl font-bold mb-2 text-white">La Gran Ventana</h4>
+                    <p class="text-sm text-gray-200">Quien implementa HOY saca una ventaja de 2 años. Costos bajos, impacto masivo.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur border border-white/20 p-6 rounded-xl">
+                    <div class="text-gray-400 font-mono text-sm mb-2">2026+</div>
+                    <h4 class="text-xl font-bold mb-2">Saturación</h4>
+                    <p class="text-sm text-gray-300">Quien no automatizó ya perdió. Alcanzar a la competencia costará el triple.</p>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <a href="#contacto" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-900 font-bold text-lg rounded-full hover:bg-gray-100 transition shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    🚀 No me quiero quedar atrás - Auditar mi Negocio
                 </a>
             </div>
-
         </div>
     </section>
 
-    <section id="acerca" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-                
-                <div class="lg:col-span-6">
-                    <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Nuestra Misión</h2>
-                    <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                        Expertos en IA al servicio de tu Crecimiento
-                    </p>
-                    <p class="mt-4 text-xl text-gray-500">
-                        Nacimos en Colombia con la misión de democratizar el acceso a la Inteligencia Artificial, ofreciendo soluciones prácticas y medibles para empresas que buscan una ventaja competitiva en el mercado. Este es el momento de transformar tu negocio con IA, cojer ventaja sobre tu competencia y en ConectaIA estamos aquí para hacerlo posible.
-                    </p>
-                    <div class="mt-6">
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                </div>
-                                <p class="ml-3 text-base text-gray-700">
-                                    <strong class="font-bold">Enfoque Local:</strong> Conocemos las necesidades y la legislación del ecosistema empresarial colombiano.
-                                </p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                </div>
-                                <p class="ml-3 text-base text-gray-700">
-                                    <strong class="font-bold">Resultados Comprobados:</strong> Implementaciones sencillas y eficaces que garantizan un Retorno de la Inversión (ROI) claro.
-                                </p>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                                </div>
-                                <p class="ml-3 text-base text-gray-700">
-                                    <strong class="font-bold">Tecnología de Punta:</strong> Uso de las herramientas de IA más avanzadas y modernas del mercado. Automatizamos tus procesos con las mejores tecnologías disponibles. Rapida y eficazmente. Y con un servico al cliente excepcional. No te dejaremos solo. Te acompañamos en todo el proceso y más allá.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Tu operación en 30 días</h2>
+            
+            <div class="grid md:grid-cols-2 gap-0 md:gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 border-r-0 md:border-r border-b md:border-b-0 border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-400 mb-6 flex items-center gap-2">
+                        <span class="w-3 h-3 bg-gray-400 rounded-full"></span> Tu Negocio HOY
+                    </h3>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-center gap-3">🕐 <span class="line-through">10h/semana respondiendo emails</span></li>
+                        <li class="flex items-center gap-3">💸 <span class="line-through">$15,000/mes en nómina operativa</span></li>
+                        <li class="flex items-center gap-3">😴 <span class="line-through">Disponibilidad 9am - 6pm</span></li>
+                        <li class="flex items-center gap-3">📉 <span class="line-through">Capacidad limitada (100 casos/día)</span></li>
+                    </ul>
                 </div>
 
-                <div class="mt-10 lg:mt-0 lg:col-span-6 flex justify-center items-center">
-                    
-                    <img class="rounded-xl shadow-2xl max-w-full h-auto" 
-                         src="images/Banner_2_ConectaIA.jpg" 
-                         alt="Equipo de ConectaIA trabajando en Inteligencia Artificial">
+                <div class="bg-white p-8 relative overflow-hidden rounded-xl shadow-2xl border border-indigo-100">
+                    <div class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">CON CONECTAIA</div>
+                    <h3 class="text-xl font-bold text-indigo-600 mb-6 flex items-center gap-2">
+                        <span class="w-3 h-3 bg-indigo-600 rounded-full animate-pulse"></span> Tu Negocio AUTOMATIZADO
+                    </h3>
+                    <ul class="space-y-4 font-medium text-gray-800">
+                        <li class="flex items-center gap-3">⚡ <span>20 min/semana de supervisión</span></li>
+                        <li class="flex items-center gap-3">💰 <span>Reducción de costos del 80%</span></li>
+                        <li class="flex items-center gap-3">🤖 <span>Activo 24/7/365 sin descanso</span></li>
+                        <li class="flex items-center gap-3">📈 <span>Escalabilidad Infinita (1,000+ casos)</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section id="contacto" class="py-16 md:py-24 bg-white">
+
+    <section id="casos" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Conversemos sobre tu Proyecto.
-                </h2>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                    Tu solicitud se procesará de inmediato. Nos contactaremos contigo en menos de 24 horas para agendar una reunión virtual de 20-30 minutos y brindarte una auditoría inicial GRATIS*.
-                </p>
-            </div>
+            <h2 class="text-3xl font-bold text-center mb-4">Resultados que pagan las facturas</h2>
+            <p class="text-center text-gray-500 mb-12">Casos reales. ROI verificado.</p>
 
-            <div class="max-w-lg mx-auto bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200">
-                
-                <div id="mensaje-exito" class="hidden text-center py-10">
-                    <svg class="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">¡Tu solicitud fue enviada!</h3>
-                    <p class="text-lg text-gray-700">
-                        Ya está en manos de nuestro equipo. Revisa tu correo, te contactaremos en breve para agendar la reunión virtual.
-                    </p>
-                </div>
-                
-                <form id="contact-form" action="https://formspree.io/f/xpwvworg" method="POST" class="space-y-6">
-                    
-                    <div>
-                        <label for="full-name" class="block text-sm font-medium text-gray-700">Nombre Completo</label>
-                        <input type="text" name="full-name" id="full-name" required
-                               class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                    </div>
-
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
-                        <input type="email" name="email" id="email" required
-                               class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                    </div>
-
-                    <div>
-                        <label for="project-details" class="block text-sm font-medium text-gray-700">Cuéntanos sobre tu proyecto</label>
-                        <textarea name="project-details" id="project-details" rows="4" required
-                                  class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
-                    </div>
-
-                    <div class="flex items-start">
-                        <div class="flex items-center h-5">
-                            <input id="data-policy" name="data-policy" type="checkbox" required
-                                   class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full text-blue-600 font-bold">🛒</div>
+                        <div>
+                            <h4 class="font-bold">PYME Retail</h4>
+                            <p class="text-xs text-gray-500">Bogotá, Colombia</p>
                         </div>
-                        <div class="ml-3 text-sm">
-                            <label for="data-policy" class="font-medium text-gray-700">
-                                Acepto la <a href="politica-privacidad.html" target="_blank" class="text-indigo-600 hover:text-indigo-800 underline">Política de Tratamiento de Datos Personales</a>.
+                    </div>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex justify-between text-sm"><span class="text-gray-500">Antes:</span> <span>6 personas en soporte</span></div>
+                        <div class="flex justify-between text-sm font-bold"><span class="text-indigo-600">Después:</span> <span>1 persona + IA</span></div>
+                        <div class="mt-3 bg-green-50 text-green-700 px-3 py-2 rounded text-center font-bold">
+                            Ahorro: $18,400 USD / año
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full text-purple-600 font-bold">💻</div>
+                        <div>
+                            <h4 class="font-bold">Startup SaaS</h4>
+                            <p class="text-xs text-gray-500">México</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 mb-4">
+                        <div class="flex justify-between text-sm"><span class="text-gray-500">Problema:</span> <span>80 emails sin responder/día</span></div>
+                        <div class="flex justify-between text-sm font-bold"><span class="text-indigo-600">Solución:</span> <span>Respuesta en < 2 min</span></div>
+                        <div class="mt-3 bg-purple-50 text-purple-700 px-3 py-2 rounded text-center font-bold">
+                            Conversión: +340% leads
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Seamos honestos por un momento.</h2>
+                    <div class="space-y-6 text-gray-300 text-lg">
+                        <p>No necesitas otra "consultoría" llena de humo.</p>
+                        <p>No necesitas presentaciones de PowerPoint bonitas.</p>
+                        <p class="text-white font-bold text-xl border-l-4 border-indigo-500 pl-4">
+                            Necesitas ver en tu pantalla cómo tu negocio funciona solo.
+                        </p>
+                        <p>
+                            En 20 minutos te muestro:
+                            <br>✅ Dónde estás perdiendo dinero hoy.
+                            <br>✅ Qué herramientas exactas usar.
+                            <br>✅ Un cálculo real de cuánto te costaría implementar.
+                        </p>
+                        <p class="text-sm text-gray-500 italic">Si no ves el valor, nos despedimos como amigos. Sin presión.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white text-gray-800 rounded-2xl p-8 shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-2">Solicita tu Auditoría Express</h3>
+                    <p class="text-sm text-gray-500 mb-6">Solo quedan 3 espacios esta semana.</p>
+
+                    <div id="mensaje-exito" class="hidden text-center py-10">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 mb-4">
+                            <svg class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">¡Solicitud Recibida!</h3>
+                        <p class="text-gray-600 mt-2">Gemma o el equipo te contactará en breve.</p>
+                    </div>
+
+                    <form id="contact-form" action="https://formspree.io/f/xpwvworg" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Tu Nombre</label>
+                            <input type="text" name="full-name" required class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                            <input type="email" name="email" required class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">¿Qué proceso te quita el sueño?</label>
+                            <textarea name="project-details" rows="3" placeholder="Ej: Responder emails, agendar citas, facturación..." required class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"></textarea>
+                        </div>
+                        <div class="flex items-start">
+                            <input id="policy" name="policy" type="checkbox" required class="mt-1 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                            <label for="policy" class="ml-2 block text-xs text-gray-500">
+                                Acepto la <a href="politica-privacidad.html" target="_blank" class="text-indigo-600 hover:underline">Política de Privacidad</a>.
                             </label>
                         </div>
-                    </div>
-
-                    <div>
-                        <button type="submit" 
-                                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300">
-                            Enviar Solicitud
+                        
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                            QUIERO MI AUDITORÍA GRATIS
                         </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-            <div class="max-w-lg mx-auto mt-8 px-4 text-center">
-            <small class="text-xs text-gray-500 block">
-                *Auditoría Sin Costo: Consiste en un **Análisis Preliminar de Necesidades (Assessment)** y una evaluación diagnóstica rápida de su infraestructura (incluyendo el sitio web existente, si aplica). Este diagnóstico se ofrece durante la consulta inicial de 20-30 minutos y el resumen de las soluciones se envía posteriormente a su correo. La **Auditoría Plus o Detallada** (que incluye análisis profundo de datos y sistemas) es un servicio que solo se proporciona, cotiza y especifica como parte de la propuesta comercial final en caso de formalización y contratación de nuestros servicios.
-            </small>
-        </div>
+            
+            <div class="mt-12 text-center text-xs text-gray-500 max-w-3xl mx-auto">
+                *Auditoría Sin Costo: Consiste en un Análisis Preliminar (Assessment). La Auditoría Profunda es un servicio que se cotiza aparte si decides trabajar con nosotros.
+            </div>
         </div>
     </section>
-  
-    <footer class="bg-gray-900 mt-20">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-sm font-semibold text-indigo-400 tracking-wider uppercase">Contacto</h3>
-                    <ul role="list" class="mt-4 space-y-4">
-                        <li><p class="text-base text-gray-300">Email: conectaia.cloud@gmail.com</p></li>
-                        <li><p class="text-base text-gray-300">Colombia</p></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold text-indigo-400 tracking-wider uppercase">Navegación</h3>
-                    <ul role="list" class="mt-4 space-y-4">
-                        <li><a href="#servicios" class="text-base text-gray-300 hover:text-white">Servicios</a></li>
-                        <li><a href="#acerca" class="text-base text-gray-300 hover:text-white">Acerca de</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold text-indigo-400 tracking-wider uppercase">Legal</h3>
-                    <ul role="list" class="mt-4 space-y-4">
-                        <li><a href="politica-privacidad.html" class="text-base text-gray-300 hover:text-white">Política de Privacidad</a></li> 
-                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Términos y Condiciones</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold text-indigo-400 tracking-wider uppercase">Síguenos</h3>
-                    <ul role="list" class="mt-4 space-y-4">
-                        <li><a href="https://www.facebook.com/profile.php?id=61584265329224" class="text-base text-gray-300 hover:text-white">Facebook</a></li>
-                        <li><a href="https://www.linkedin.com/in/gemma-clavero-del-moral-314108261/" class="text-base text-gray-300 hover:text-white">LinkedIn</a></li>
-                    </ul>
-                </div>
+
+    <footer class="bg-black py-12 border-t border-gray-800 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <img src="images/logo.jpg" alt="Logo ConectaIA" class="h-8 w-auto grayscale opacity-50 hover:opacity-100 transition">
+                <span>&copy; 2025 ConectaIA</span>
             </div>
-            <div class="mt-12 border-t border-gray-800 pt-8">
-                <p class="text-base text-gray-400 text-center">
-                    &copy; 2025 ConectaIA. Todos los derechos reservados.
-                </p>
+            <div class="flex gap-6">
+                <a href="politica-privacidad.html" class="hover:text-white transition">Privacidad</a>
+                <a href="#" class="hover:text-white transition">Términos</a>
+                <a href="mailto:conectaia.cloud@gmail.com" class="hover:text-white transition">conectaia.cloud@gmail.com</a>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/gemma-clavero-del-moral-314108261/" target="_blank" class="hover:text-white transition">LinkedIn</a>
+                <a href="https://www.facebook.com/profile.php?id=61584265329224" target="_blank" class="hover:text-white transition">Facebook</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // 1. FUNCIONALIDAD DEL MENÚ MÓVIL (HAMBURGUESA)
-        document.getElementById('menu-button').addEventListener('click', function() {
-            var mobileMenu = document.getElementById('mobile-menu');
+        // 1. LÓGICA DE LA CALCULADORA ROI
+        const rangeHoras = document.getElementById('horas');
+        const displayHoras = document.getElementById('val-horas');
+        const inputCosto = document.getElementById('costo');
+        
+        const displayMes = document.getElementById('res-mes');
+        const displayAno = document.getElementById('res-ano');
+
+        function calcularROI() {
+            const horasSemana = parseInt(rangeHoras.value) || 0;
+            const costoHora = parseFloat(inputCosto.value) || 0;
+
+            // Fórmula: Horas * Costo * 4.33 semanas/mes
+            const perdidaMensual = horasSemana * costoHora * 4.33;
+            const recuperacionAnual = perdidaMensual * 12;
+
+            // Actualizar DOM
+            displayHoras.textContent = `${horasSemana}h`;
+            
+            // Formatear moneda
+            const formato = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+            
+            displayMes.textContent = formato.format(perdidaMensual);
+            displayAno.textContent = formato.format(recuperacionAnual);
+        }
+
+        // Event Listeners para calculadora
+        rangeHoras.addEventListener('input', calcularROI);
+        inputCosto.addEventListener('input', calcularROI);
+        
+        // Calcular al inicio
+        calcularROI();
+
+
+        // 2. MENÚ MÓVIL
+        const btnMenu = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        btnMenu.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // 2. FUNCIONALIDAD DEL FORMULARIO CON AJAX (Vacía y Muestra Éxito)
-        var form = document.getElementById('contact-form');
-        var successMessage = document.getElementById('mensaje-exito');
+
+        // 3. FORMULARIO AJAX (FORMSPREE)
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('mensaje-exito');
 
         form.addEventListener("submit", function(e) {
-            e.preventDefault(); // Detiene la redirección por defecto de Formspree
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = "Enviando...";
+            btn.disabled = true;
 
-            var data = new FormData(form);
+            const data = new FormData(form);
             fetch(form.action, {
                 method: 'POST',
                 body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    // Si el envío fue exitoso:
-                    successMessage.classList.remove('hidden'); // Muestra el mensaje de éxito
-                    form.classList.add('hidden'); // Oculta el formulario de contacto
-                    form.reset(); // Vacia el formulario (aunque ya esté oculto)
+                    successMessage.classList.remove('hidden');
+                    form.classList.add('hidden');
+                    form.reset();
                 } else {
-                    // Si hubo un error en Formspree:
                     response.json().then(data => {
                         if (Object.hasOwn(data, 'errors')) {
-                            alert("Error de Formulario: " + data["errors"].map(error => error["message"]).join(", "))
+                            alert(data["errors"].map(error => error["message"]).join(", "));
                         } else {
-                            alert("¡Ocurrió un error al enviar el formulario! Por favor, inténtalo de nuevo.")
+                            alert("Error al enviar. Por favor intenta de nuevo.");
                         }
-                    })
+                    });
+                    btn.textContent = originalText;
+                    btn.disabled = false;
                 }
             }).catch(error => {
-                // Si hubo un error de conexión:
-                alert("¡Error de conexión! Por favor, verifica tu red e inténtalo de nuevo.");
+                alert("Error de conexión.");
+                btn.textContent = originalText;
+                btn.disabled = false;
             });
         });
+
+        // 4. TIMER DE URGENCIA (Cuenta regresiva falsa cíclica para demo)
+        function startTimer(duration, display) {
+            let timer = duration, days, hours, minutes;
+            setInterval(function () {
+                days = Math.floor(timer / (60 * 60 * 24));
+                hours = Math.floor((timer % (60 * 60 * 24)) / (60 * 60));
+                minutes = Math.floor((timer % (60 * 60)) / 60);
+
+                // Formato con ceros a la izquierda
+                days = days < 10 ? "0" + days : days;
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+
+                display.textContent = days + "d " + hours + "h " + minutes + "m";
+
+                if (--timer < 0) {
+                    timer = duration; // Reiniciar si llega a cero
+                }
+            }, 1000); // Actualizar cada segundo (1000ms)
+        }
+
+        window.onload = function () {
+            // Iniciar timer de 3 días y medio (en segundos)
+            const threeDays = (3 * 24 * 60 * 60) + (12 * 60 * 60) + (45 * 60); 
+            const display = document.querySelector('#countdown-timer');
+            startTimer(threeDays, display);
+        };
+
+        let cardsClicked = 0;
+        let totalSavings = 0;
+
+        function transformCard(element, savingsValue) {
+            // Verificar si ya fue activada para no contar doble
+            if(element.classList.contains('active-gain')) return;
+
+            // 1. Efecto Visual de la Tarjeta (Rojo -> Verde)
+            element.classList.remove('bg-red-50', 'border-red-500');
+            element.classList.add('bg-green-50', 'border-green-500', 'active-gain');
+            
+            // 2. Cambio de contenido (Ocultar dolor, mostrar ganancia)
+            const painDiv = element.querySelector('.pain-content');
+            const gainDiv = element.querySelector('.gain-content');
+            
+            painDiv.classList.add('hidden');
+            gainDiv.classList.remove('hidden');
+            
+            // Animación suave de entrada
+            gainDiv.classList.add('animate-fade-in-up');
+
+            // 3. Lógica del Contador y Ahorros
+            cardsClicked++;
+            totalSavings += savingsValue;
+
+            // 4. Actualizar el CTA Dinámico
+            const ctaContainer = document.getElementById('dynamic-cta-container');
+            const countSpan = document.getElementById('count-clicks');
+            const savingsSpan = document.getElementById('total-savings');
+
+            countSpan.textContent = cardsClicked;
+            
+            // Formatear dinero a pesos colombianos
+            const formatter = new Intl.NumberFormat('es-CO', {
+                style: 'currency',
+                currency: 'COP',
+                minimumFractionDigits: 0
+            });
+            savingsSpan.textContent = formatter.format(totalSavings);
+
+            // 5. Mostrar el CTA si es el primer clic
+            if (cardsClicked === 1) {
+                ctaContainer.classList.remove('hidden');
+                // Pequeño delay para permitir que el display block suceda antes de la opacidad
+                setTimeout(() => {
+                    ctaContainer.classList.remove('translate-y-4', 'opacity-0');
+                }, 100);
+            }
+        }
     </script>
 </body>
 </html>
