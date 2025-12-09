@@ -155,67 +155,81 @@
                 </p>
             </div>
 
-            <div id="calculadora" class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl border-2 border-indigo-100 overflow-hidden animate-border-glow">
-                <div class="bg-gray-50 p-6 md:p-8 border-b border-gray-200">
-                    <h2 class="text-2xl font-bold text-center text-gray-800 flex items-center justify-center gap-2">
+            <div id="calculadora" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl border-2 border-indigo-100 overflow-hidden animate-border-glow">
+                <div class="bg-gray-50 p-4 md:p-6 border-b border-gray-200">
+                    <h2 class="text-xl md:text-2xl font-bold text-center text-gray-800 flex items-center justify-center gap-2">
                         📊 ! Calcule AQUÍ su Pérdida Real ! 😲
                     </h2>
-                    
                 </div>
                 
-                <div class="p-6 md:p-10 grid md:grid-cols-2 gap-10">
-                    <p class="text-left text-l text-indigo-600 font-bold mb-8 animate-pulse">Mueva los controles para calcular sus gastos</p>
-                    <div class="space-y-8">
+                <div class="p-6 md:p-8 grid md:grid-cols-12 gap-8 items-start">
+                    
+                    <div class="md:col-span-7 space-y-6">
+                        <p class="text-left text-indigo-600 font-bold animate-pulse text-sm">Mueva los controles para calcular sus gastos:</p>
+                        
                         <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">Horas semanales perdidas en tareas manuales:</label>
-                            <div class="flex items-center gap-3">
-                                <input type="range" id="horas" min="0" max="60" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
-                                <span class="text-xl font-bold text-indigo-600 w-16 text-right" id="val-horas">10h</span>
+                            <div class="flex justify-between items-end mb-2">
+                                <label class="block text-sm font-bold text-gray-700">Horas semanales perdidas:</label>
+                                <span class="text-2xl font-bold text-indigo-600" id="val-horas">10h</span>
                             </div>
-                            <div class="mt-1 space-y-1">
-                                <p class="text-xs font-bold text-gray-500 mb-1">Tareas manuales comunes:</p>
-                                <ul class="text-xs text-gray-500 list-disc ml-4 space-y-0.5">
-                                    <li>Clasificación y respuesta de correos **Emails** repetitivos.</li>
-                                    <li>**Agendamiento/Reservaciones** (citas, demos, servicios).</li>
-                                    <li>Procesamiento de **Facturas** y remisiones.</li>
-                                    <li>Actualización de hojas de cálculo **Excel** o bases de datos.</li>
-                                    <li>Atención de **FAQs** (preguntas frecuentes).</li>
-                                    <li>**Confirmación de envíos** o citas (vía SMS/WhatsApp).</li>
-                                    <li>Ingreso de **Leads** o contactos al CRM.</li>
-                                    <li>Generación de **Informes** o reportes semanales.</li>
+                            <input type="range" id="horas" min="0" max="60" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                            
+                            <div class="mt-4 bg-indigo-50/50 p-4 rounded-lg border border-indigo-100">
+                                <p class="text-xs font-bold text-gray-500 mb-2">Tareas manuales.:</p>
+                                <ul class="text-xs text-gray-600 list-disc ml-4 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
+                                    <li>Gestión de **Emails** <span class="text-red-500 font-semibold">(~8-10h)</span></li>
+                                    <li>Actualizar **Excel** <span class="text-red-500 font-semibold">(~4-5h)</span></li>
+                                    <li>**Facturas** y cobros <span class="text-red-500 font-semibold">(~3-4h)</span></li>
+                                    <li>Atención **FAQs** <span class="text-red-500 font-semibold">(~3-5h)</span></li>
+                                    <li>Generar **Informes** <span class="text-red-500 font-semibold">(~2-4h)</span></li>
+                                    <li>**Agendamiento** <span class="text-red-500 font-semibold">(~2-3h)</span></li>
+                                    <li>Ingreso de **Leads** <span class="text-red-500 font-semibold">(~2h)</span></li>
+                                    <li>**Confirmaciones** <span class="text-red-500 font-semibold">(~1-2h)</span></li>
                                 </ul>
+                                <p class="text-[10px] text-gray-400 italic mt-2 text-right border-t border-indigo-100 pt-1">
+                                    * Valores promedio referencia PyME.
+                                </p>
                             </div>
                         </div>
 
-                        <div>
-                            <label class="block text-sm font-bold text-gray-700 mb-2">Costo promedio por hora (Equipo):</label>
-                            <div class="flex items-center gap-3">
+                        <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg border border-gray-200">
+                            <label class="text-sm font-bold text-gray-700">Costo promedio por hora (Equipo):</label>
+                            <div class="flex items-center gap-2 w-32 sm:w-40">
                                 <span class="text-gray-500 font-bold">$</span>
-                                <input type="number" id="costo" value="50000" class="w-full border-2 border-gray-300 rounded-lg px-3 py-2 font-bold text-gray-700 focus:border-indigo-500 focus:outline-none">
+                                <input type="number" id="costo" value="50000" class="w-full border border-gray-300 rounded px-2 py-1 font-bold text-gray-700 focus:border-indigo-500 focus:outline-none text-right">
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-gray-900 to-indigo-900 rounded-xl p-6 text-white flex flex-col justify-center text-center relative overflow-hidden">
-                        <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500 rounded-full blur-3xl opacity-30"></div>
-                        
-                        <p class="text-gray-300 text-sm mb-2 uppercase tracking-wide">Está perdiendo al mes:</p>
-                        <div class="text-4xl font-bold text-red-400 mb-6" id="res-mes">$2,165,000 COP</div>
-                        
-                        <div class="border-t border-white/20 pt-4">
-                            <p class="text-gray-300 text-sm mb-2 uppercase tracking-wide">Podría recuperar al año:</p>
-                            <div class="text-5xl font-extrabold text-conecta-green text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300" id="res-ano">
-                                $26,000,000 COP
+                    <div class="md:col-span-5 h-full flex flex-col">
+                        <div class="bg-gradient-to-br from-gray-900 to-indigo-900 rounded-xl p-6 text-white flex flex-col justify-center text-center relative overflow-hidden flex-grow shadow-lg min-h-[300px]">
+                            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500 rounded-full blur-3xl opacity-30"></div>
+                            
+                            <div class="flex-1 flex flex-col justify-center space-y-6">
+                                <div>
+                                    <p class="text-gray-300 text-xs uppercase tracking-widest mb-1">Está perdiendo al mes:</p>
+                                    <div class="text-3xl lg:text-4xl font-bold text-red-400" id="res-mes">$2,165,000</div>
+                                </div>
+                                
+                                <div class="border-t border-white/20 pt-6">
+                                    <p class="text-gray-300 text-xs uppercase tracking-widest mb-1">Podría recuperar al año:</p>
+                                    <div class="text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300" id="res-ano">
+                                        $26,000,000
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8">
+                                <a href="#contacto" class="block w-full py-3 px-4 bg-white text-indigo-900 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg text-sm uppercase tracking-wide transform hover:scale-105 duration-200">
+                                    Evitar esta pérdida →
+                                </a>
+                                <p class="mt-3 text-[10px] text-gray-400 flex justify-center gap-1">
+                                    Auditoría inicial GRATIS.
+                                    <a href="terminos.html" target="_blank" class="underline hover:text-white">Ver Términos</a>.
+                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="bg-gray-50 p-6 text-center">
-                    <a href="#contacto" class="inline-block w-full md:w-auto px-8 py-4 text-lg font-bold text-white bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-                        ENTENDÍ - NO QUIERO PERDER MÁS DINERO →
-                    </a>
-                    <p class="mt-3 text-xs text-gray-500">Sin compromiso. Auditoría inicial GRATIS.</p>
                 </div>
             </div>
         </div>
@@ -539,7 +553,7 @@
             </div>
             
             <div class="mt-12 text-center text-xs text-gray-500 max-w-3xl mx-auto">
-                *Auditoría Express: Análisis Preliminar (Assessment) totalmente GRATIS. En caso de que este interesado en hacer Auditoría Profunda, el servicio que se cotizaría por aparte. 
+                *Auditoría Express: Análisis Preliminar (Assessment) totalmente GRATIS. En caso de que este interesado en hacer Auditoría Profunda, el servicio que se cotizaría por aparte. Ver <a href="terminos.html" target="_blank" class="text-indigo-500 hover:text-indigo-600 underline font-medium">Términos y Condiciones</a>.
             </div>
         </div>
     </section>
@@ -582,83 +596,108 @@
 
     <div id="chat-widget-container" class="fixed bottom-6 right-6 z-50 font-sans">
     
-    <button id="chat-toggle-btn" onclick="toggleChat()" class="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(79,70,229,0.5)] focus:outline-none">
-        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 transition-transform duration-300">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-        </svg>
-        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 hidden transition-transform duration-300 rotate-90">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>
-    </button>
+        <button id="chat-toggle-btn" onclick="toggleChat()" class="w-16 h-16 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(79,70,229,0.5)] focus:outline-none">
+            <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 transition-transform duration-300">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+            </svg>
+            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8 hidden transition-transform duration-300 rotate-90">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
 
-    <div id="chat-window" class="chat-container chat-closed absolute bottom-20 right-0 w-[90vw] max-w-[380px] h-[600px] max-h-[70vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-100">
-        
-        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 flex items-center gap-3 text-white">
-            <div class="relative">
-                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold backdrop-blur-sm">
-                    IA
+        <div id="chat-window" class="chat-container chat-closed absolute bottom-20 right-0 w-[90vw] max-w-[380px] h-[600px] max-h-[70vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-100">
+            
+            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 flex items-center gap-3 text-white">
+                <div class="relative">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-sm font-bold backdrop-blur-sm">
+                        IA
+                    </div>
+                    <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-indigo-600 rounded-full"></div>
                 </div>
-                <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-indigo-600 rounded-full"></div>
-            </div>
-            <div class="flex-1">
-                <h3 class="font-bold text-sm">Asistente ConectaIA</h3>
-                <p class="text-xs text-indigo-100 flex items-center gap-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> En línea
-                </p>
-            </div>
-            <button onclick="toggleChat()" class="text-white/80 hover:text-white transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-                </svg>
-            </button>
-        </div>
-
-        <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 scroll-smooth">
-            <div class="flex justify-start">
-                <div class="chat-bubble-assistant">
-                    ¡Hola! Soy el asistente virtual de ConectaIA. 🤖<br><br>
-                    ¿En qué puedo ayudarte hoy? Puedo calcular tu ahorro potencial o explicarte nuestros servicios de automatización.
+                <div class="flex-1">
+                    <h3 class="font-bold text-sm">Asistente ConectaIA</h3>
+                    <p class="text-xs text-indigo-100 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span> En línea
+                    </p>
                 </div>
-            </div>
-        </div>
-
-        <div id="typing-indicator" class="hidden px-4 pb-2 bg-gray-50">
-            <div class="flex justify-start">
-                <div class="chat-bubble-assistant flex gap-1 items-center h-8">
-                    <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
-                    <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
-                    <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="p-3 bg-white border-t border-gray-100">
-            <div class="flex gap-2 items-center bg-gray-100 rounded-full px-1 py-1 pr-1 border border-transparent focus-within:border-indigo-300 focus-within:bg-white focus-within:shadow-sm transition-all">
-                
-                <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." 
-                       class="flex-1 bg-transparent border-none focus:ring-0 text-sm px-3 py-2 text-gray-700 placeholder-gray-400 outline-none w-full"
-                       onkeypress="handleEnter(event)">
-                
-                <button onclick="alert('Función de audio en desarrollo. Pronto podrás enviar mensajes de voz.')" class="p-2 text-gray-400 hover:text-indigo-600 transition-colors rounded-full hover:bg-indigo-50" title="Enviar audio">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
-                    </svg>
-                </button>
-
-                <button onclick="sendMessage()" id="send-btn" class="p-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-10 h-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 translate-x-0.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                <button onclick="toggleChat()" class="text-white/80 hover:text-white transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
                     </svg>
                 </button>
             </div>
-            <div class="text-[10px] text-center text-gray-400 mt-2">
-                ConectaIA Solutions &copy; 2025
+
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 scroll-smooth">
+                <div class="flex justify-start">
+                    <div class="chat-bubble-assistant">
+                        ¡Hola! Soy el asistente virtual de ConectaIA. 🤖<br><br>
+                        ¿En qué puedo ayudarte hoy? Puedo calcular tu ahorro potencial o explicarte nuestros servicios de automatización.
+                    </div>
+                </div>
+            </div>
+
+            <div id="typing-indicator" class="hidden px-4 pb-2 bg-gray-50">
+                <div class="flex justify-start">
+                    <div class="chat-bubble-assistant flex gap-1 items-center h-8">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                        <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                        <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3 bg-white border-t border-gray-100">
+                <div class="flex gap-2 items-center bg-gray-100 rounded-full px-1 py-1 pr-1 border border-transparent focus-within:border-indigo-300 focus-within:bg-white focus-within:shadow-sm transition-all">
+                    
+                    <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." 
+                        class="flex-1 bg-transparent border-none focus:ring-0 text-sm px-3 py-2 text-gray-700 placeholder-gray-400 outline-none w-full"
+                        onkeypress="handleEnter(event)">
+                    
+                    <button onclick="alert('Función de audio en desarrollo. Pronto podrás enviar mensajes de voz.')" class="p-2 text-gray-400 hover:text-indigo-600 transition-colors rounded-full hover:bg-indigo-50" title="Enviar audio">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+                        </svg>
+                    </button>
+
+                    <button onclick="sendMessage()" id="send-btn" class="p-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-10 h-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 translate-x-0.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="text-[10px] text-center text-gray-400 mt-2">
+                    ConectaIA Solutions &copy; 2025
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <script>
+
+        // --- NUEVO CÓDIGO PARA GESTIÓN DE SESIÓN ---
+        
+        // 1. Función para generar un ID único (UUID)
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        // 2. Función para obtener el ID actual o crear uno nuevo si no existe
+        function getSessionId() {
+            // Intentamos recuperar el ID del almacenamiento del navegador
+            let sessionId = localStorage.getItem('chat_session_id');
+            
+            // Si no existe (es la primera vez que entra), creamos uno y lo guardamos
+            if (!sessionId) {
+                sessionId = generateUUID();
+                localStorage.setItem('chat_session_id', sessionId);
+            }
+            return sessionId;
+        }
+        // ---------------------------------------------------------------   
+
         // 1. LÓGICA DE LA CALCULADORA ROI
         const rangeHoras = document.getElementById('horas');
         const displayHoras = document.getElementById('val-horas');
@@ -888,6 +927,10 @@
 
         async function sendMessage() {
             const text = inputField.value.trim();
+            
+            // 1. OBTENER EL ID DE SESIÓN AQUÍ
+            const sessionId = getSessionId(); // <--- NUEVO: Recuperamos el ID
+           
             if (!text || isWaitingResponse) return;
 
             // 1. Mostrar mensaje usuario
@@ -906,7 +949,10 @@
                 const response = await fetch(N8N_WEBHOOK_URL, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ mensaje: text }),
+                    body: JSON.stringify({ 
+                        mensaje: text,
+                        sessionId: sessionId  // <--- NUEVO: Enviamos el ID al webhook
+                    }),
                 });
 
                 const data = await response.json();
