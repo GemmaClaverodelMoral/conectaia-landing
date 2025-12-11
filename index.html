@@ -6,6 +6,7 @@
     <meta name="facebook-domain-verification" content="r70ewy2eb9wb477ayorvmcwns2ype2" />
     <meta name="description" content="Automatización con IA para empresas. Recupere tiempo y dinero automatizando sus procesos repetitivos.">
     <title>ConectaIA | Soluciones Automatizadas con IA</title>
+    <link rel="icon" type="image/png" href="images/ICONO_CIA.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -106,15 +107,15 @@
 
     <div class="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 text-white py-3 px-4 text-center sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-3">
-            <span class="text-yellow-300 font-bold animate-pulse">🔥 VENTANA DE OPORTUNIDAD 2025:</span>
-            <span class="text-sm sm:text-base">Qudan pocos espacios disponibles para Auditoría Express* GRATIS. (por tiempo limitado) ASEGURE SU CUPO HOY</span>
+            <span class="text-yellow-300 font-bold animate-pulse">🔥 VENTANA DE OPORTUNIDAD:</span>
+            <span class="text-sm sm:text-base">Pocos espacios disponibles para Auditoría Express* GRATIS. (tiempo limitado) ASEGURE SU CUPO</span>
         </div>
     </div>
 
     <header class="bg-white shadow-md sticky top-12 z-40">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <a href="#inicio" class="text-2xl font-bold text-indigo-600 flex items-center gap-2">
-                <img src="images/logo.jpg" alt="Logo ConectaIA" class="h-10 w-auto object-contain">
+                <img src="images/ICONO_CIA.png" alt="Logo ConectaIA" class="h-10 w-auto object-contain">
                 <span class="sm:inline">Conecta IA</span>
                 <span class="text-red-600 decoration-4 decoration-red-200">a su alcance</span>
             </a>
@@ -123,7 +124,7 @@
                 <a href="#calculadora" class="text-gray-600 hover:text-indigo-600 font-medium transition">Calculadora ROI</a>
                 <a href="#casos" class="text-gray-600 hover:text-indigo-600 font-medium transition">Casos Reales</a>
                 <a href="#contacto" class="text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 px-6 py-2 rounded-lg font-bold transition duration-300 shadow-lg transform hover:-translate-y-0.5">
-                    Agende AHORA →
+                    Solicite Agendamiento
                 </a>
             </div>
 
@@ -154,7 +155,26 @@
                     Empresas como la suya recuperan <strong class="text-indigo-600">$200,000,000 COP al año</strong> automatizando procesos con IA.
                 </p>
             </div>
+            <div class="max-w-5xl mx-auto mb-8 bg-indigo-50 p-6 rounded-xl border border-indigo-100 shadow-sm">
+                <p class="text-sm font-bold text-indigo-800 mb-3 text-center uppercase tracking-wide">
+                    📋 Referencia: Tareas manuales comunes y tiempos promedio
+                </p>
+                <ul class="text-xs text-gray-700 list-disc list-inside grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-2">
+                    <li>Gestión de **Emails** <span class="text-red-500 font-bold block sm:inline">(~8-10h)</span></li>
+                    <li>Actualizar **Excel** <span class="text-red-500 font-bold block sm:inline">(~4-5h)</span></li>
+                    <li>**Facturas** y cobros <span class="text-red-500 font-bold block sm:inline">(~3-4h)</span></li>
+                    <li>Atención **FAQs** <span class="text-red-500 font-bold block sm:inline">(~3-5h)</span></li>
+                    <li>Generar **Informes** <span class="text-red-500 font-bold block sm:inline">(~2-4h)</span></li>
+                    <li>**Agendamiento** <span class="text-red-500 font-bold block sm:inline">(~2-3h)</span></li>
+                    <li>Ingreso de **Leads** <span class="text-red-500 font-bold block sm:inline">(~2h)</span></li>
+                    <li>**Confirmaciones** <span class="text-red-500 font-bold block sm:inline">(~1-2h)</span></li>
+                </ul>
+                <p class="text-[10px] text-gray-400 italic mt-4 text-center border-t border-indigo-200 pt-2">
+                    * Valores promedio estimados para referencia PyME.
+                </p>
+            </div>
 
+<div id="calculadora" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl border-2 border-indigo-100 overflow-hidden animate-border-glow">            
             <div id="calculadora" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl border-2 border-indigo-100 overflow-hidden animate-border-glow">
                 <div class="bg-gray-50 p-4 md:p-6 border-b border-gray-200">
                     <h2 class="text-xl md:text-2xl font-bold text-center text-gray-800 flex items-center justify-center gap-2">
@@ -173,23 +193,6 @@
                                 <span class="text-2xl font-bold text-indigo-600" id="val-horas">10h</span>
                             </div>
                             <input type="range" id="horas" min="0" max="60" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
-                            
-                            <div class="mt-4 bg-indigo-50/50 p-4 rounded-lg border border-indigo-100">
-                                <p class="text-xs font-bold text-gray-500 mb-2">Tareas manuales.:</p>
-                                <ul class="text-xs text-gray-600 list-disc ml-4 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
-                                    <li>Gestión de **Emails** <span class="text-red-500 font-semibold">(~8-10h)</span></li>
-                                    <li>Actualizar **Excel** <span class="text-red-500 font-semibold">(~4-5h)</span></li>
-                                    <li>**Facturas** y cobros <span class="text-red-500 font-semibold">(~3-4h)</span></li>
-                                    <li>Atención **FAQs** <span class="text-red-500 font-semibold">(~3-5h)</span></li>
-                                    <li>Generar **Informes** <span class="text-red-500 font-semibold">(~2-4h)</span></li>
-                                    <li>**Agendamiento** <span class="text-red-500 font-semibold">(~2-3h)</span></li>
-                                    <li>Ingreso de **Leads** <span class="text-red-500 font-semibold">(~2h)</span></li>
-                                    <li>**Confirmaciones** <span class="text-red-500 font-semibold">(~1-2h)</span></li>
-                                </ul>
-                                <p class="text-[10px] text-gray-400 italic mt-2 text-right border-t border-indigo-100 pt-1">
-                                    * Valores promedio referencia PyME.
-                                </p>
-                            </div>
                         </div>
 
                         <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg border border-gray-200">
@@ -220,11 +223,11 @@
                             </div>
 
                             <div class="mt-8">
-                                <a href="#contacto" class="block w-full py-3 px-4 bg-white text-indigo-900 font-bold rounded-lg hover:bg-gray-100 transition shadow-lg text-sm uppercase tracking-wide transform hover:scale-105 duration-200">
-                                    Evitar esta pérdida →
+                                <a href="#contacto" class="block w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold rounded-full shadow-lg transform hover:scale-105 transition animate-bounce text-sm uppercase tracking-wide">
+                                    Puede evitar esta pérdida
                                 </a>
                                 <p class="mt-3 text-[10px] text-gray-400 flex justify-center gap-1">
-                                    Auditoría inicial GRATIS.
+                                    Auditoría inicial.
                                     <a href="terminos.html" target="_blank" class="underline hover:text-white">Ver Términos</a>.
                                 </p>
                             </div>
@@ -247,8 +250,8 @@
                 ¿va a quedarse atrás de sú competencia?
             </h3>
             
-            <p class="text-center text-l text-indigo-600 font-bold mb-8 animate-pulse">
-                👇 Haga clic en las tarjetas con las que se identifique para poder ver su potencial de Ahorro 👇
+            <p class="text-center text-xl text-indigo-600 font-bold mb-8 animate-pulse">
+                👇 Haga clic en las tarjetas 👇
             </p>
 
             <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -406,8 +409,8 @@
             </div>
 
             <div class="mt-16">
-                <a href="#contacto" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-indigo-900 font-bold text-lg rounded-full hover:bg-gray-100 transition shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                    🚀 No me quiero quedar atrás - Auditen mi Negocio - AGENDEMOS
+                <a href="#contacto" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-lg rounded-full shadow-lg transform hover:scale-105 transition animate-bounce">
+                    🚀 Sin compromiso - AGENDEMOS
                 </a>
             </div>
         </div>
@@ -535,7 +538,7 @@
                             <input type="email" name="email" required class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">¿Qué proceso/s le quita/n el sueño? Cuanta más información nos brinde, mejor podremos preparar su solución</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">¿Qué proceso/s le quita/n el sueño? Cuanta más información nos brinde, mejor podremos preparar su auditoría y solución</label>
                             <textarea name="project-details" rows="3" placeholder="Ej: Responder emails, agendar citas, facturación..." required class="w-full border-gray-300 border rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"></textarea>
                         </div>
                         <div class="flex items-start">
@@ -545,8 +548,8 @@
                             </label>
                         </div>
                         
-                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                            AUDITORÍA EXPRESS* GRATIS
+                        <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold py-4 rounded-full shadow-lg transform hover:scale-105 transition duration-300 animate-bounce">
+                            AUDITORÍA EXPRESS*
                         </button>
                     </form>
                 </div>
@@ -561,7 +564,7 @@
     <footer class="bg-black py-12 border-t border-gray-800 text-gray-400 text-sm">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <img src="images/logo.jpg" alt="Logo ConectaIA" class="h-8 w-auto grayscale opacity-50 hover:opacity-100 transition">
+                <img src="images/ICONO_CIA.png" alt="Logo ConectaIA" class="h-8 w-auto grayscale opacity-50 hover:opacity-100 transition">
                 <span>&copy; 2025 ConectaIA</span>
             </div>
             <div class="flex gap-6">
