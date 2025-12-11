@@ -117,7 +117,7 @@
             <a href="#inicio" class="text-2xl font-bold text-indigo-600 flex items-center gap-2">
                 <img src="images/ICONO_CIA.png" alt="Logo ConectaIA" class="h-10 w-auto object-contain">
                 <span class="sm:inline">Conecta IA</span>
-                <span class="text-red-600 decoration-4 decoration-red-200">a su alcance</span>
+                <span class="text-red-600 decoration-4 hidden decoration-red-200">a su alcance</span>
             </a>
             
             <div class="hidden md:flex space-x-8 items-center">
@@ -208,62 +208,63 @@
                 </p>
             </div>
 
-<div id="calculadora" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl border-2 border-indigo-100 overflow-hidden animate-border-glow">            
-            <div id="calculadora" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl border-2 border-indigo-100 overflow-hidden animate-border-glow">
-                <div class="bg-gray-50 p-4 md:p-6 border-b border-gray-200">
-                    <h2 class="text-xl md:text-2xl font-bold text-center text-gray-800 flex items-center justify-center gap-2">
-                        📊 ! Calcule AQUÍ su Pérdida Real ! 😲
-                    </h2>
-                </div>
-                
-                <div class="p-6 md:p-8 grid md:grid-cols-12 gap-8 items-start">
-                    
-                    <div class="md:col-span-7 space-y-6">
-                        <p class="text-left text-indigo-600 font-bold animate-pulse text-sm">Mueva los controles para calcular sus gastos:</p>
-                        
-                        <div>
-                            <div class="flex justify-between items-end mb-2">
-                                <label class="block text-sm font-bold text-gray-700">Horas semanales perdidas:</label>
-                                <span class="text-2xl font-bold text-indigo-600" id="val-horas">10h</span>
-                            </div>
-                            <input type="range" id="horas" min="0" max="60" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
-                        </div>
-
-                        <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg border border-gray-200">
-                            <label class="text-sm font-bold text-gray-700">Costo promedio por hora (Equipo):</label>
-                            <div class="flex items-center gap-2 w-32 sm:w-40">
-                                <span class="text-gray-500 font-bold">$</span>
-                                <input type="number" id="costo" value="50000" class="w-full border border-gray-300 rounded px-2 py-1 font-bold text-gray-700 focus:border-indigo-500 focus:outline-none text-right">
-                            </div>
-                        </div>
+            <div id="calculadora" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl border-2 border-indigo-100 overflow-hidden animate-border-glow">            
+                <div id="calculadora" class="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl border-2 border-indigo-100 overflow-hidden animate-border-glow">
+                    <div class="bg-gray-50 p-4 md:p-6 border-b border-gray-200">
+                        <h2 class="text-xl md:text-2xl font-bold text-center text-gray-800 flex items-center justify-center gap-2">
+                            📊 ! Calcule AQUÍ su Pérdida Real ! 😲
+                        </h2>
                     </div>
-
-                    <div class="md:col-span-5 h-full flex flex-col">
-                        <div class="bg-gradient-to-br from-gray-900 to-indigo-900 rounded-xl p-6 text-white flex flex-col justify-center text-center relative overflow-hidden flex-grow shadow-lg min-h-[300px]">
-                            <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500 rounded-full blur-3xl opacity-30"></div>
+                    
+                    <div class="p-6 md:p-8 grid md:grid-cols-12 gap-8 items-start">
+                        
+                        <div class="md:col-span-7 space-y-6">
+                            <p class="text-left text-indigo-600 font-bold animate-pulse text-sm">Mueva los controles para calcular sus gastos:</p>
                             
-                            <div class="flex-1 flex flex-col justify-center space-y-6">
-                                <div>
-                                    <p class="text-gray-300 text-xs uppercase tracking-widest mb-1">Está perdiendo al mes:</p>
-                                    <div class="text-3xl lg:text-4xl font-bold text-red-400" id="res-mes">$2,165,000</div>
+                            <div>
+                                <div class="flex justify-between items-end mb-2">
+                                    <label class="block text-sm font-bold text-gray-700">Horas semanales perdidas:</label>
+                                    <span class="text-2xl font-bold text-indigo-600" id="val-horas">10h</span>
                                 </div>
+                                <input type="range" id="horas" min="0" max="60" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                            </div>
+
+                            <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg border border-gray-200">
+                                <label class="text-sm font-bold text-gray-700">Costo promedio por hora (Equipo):</label>
+                                <div class="flex items-center gap-2 w-32 sm:w-40">
+                                    <span class="text-gray-500 font-bold">$</span>
+                                    <input type="number" id="costo" value="50000" class="w-full border border-gray-300 rounded px-2 py-1 font-bold text-gray-700 focus:border-indigo-500 focus:outline-none text-right">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-5 h-full flex flex-col">
+                            <div class="bg-gradient-to-br from-gray-900 to-indigo-900 rounded-xl p-6 text-white flex flex-col justify-center text-center relative overflow-hidden flex-grow shadow-lg min-h-[300px]">
+                                <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-500 rounded-full blur-3xl opacity-30"></div>
                                 
-                                <div class="border-t border-white/20 pt-6">
-                                    <p class="text-gray-300 text-xs uppercase tracking-widest mb-1">Podría recuperar al año:</p>
-                                    <div class="text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300" id="res-ano">
-                                        $26,000,000
+                                <div class="flex-1 flex flex-col justify-center space-y-6">
+                                    <div>
+                                        <p class="text-gray-300 text-xs uppercase tracking-widest mb-1">Está perdiendo al mes:</p>
+                                        <div class="text-3xl lg:text-4xl font-bold text-red-400" id="res-mes">$2,165,000</div>
+                                    </div>
+                                    
+                                    <div class="border-t border-white/20 pt-6">
+                                        <p class="text-gray-300 text-xs uppercase tracking-widest mb-1">Podría recuperar al año:</p>
+                                        <div class="text-4xl lg:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300" id="res-ano">
+                                            $26,000,000
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="mt-8">
-                                <a href="#contacto" class="block w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold rounded-full shadow-lg transform hover:scale-105 transition animate-bounce text-sm uppercase tracking-wide">
-                                    Puede evitar esta pérdida
-                                </a>
-                                <p class="mt-3 text-[10px] text-gray-400 flex justify-center gap-1">
-                                    Auditoría inicial.
-                                    <a href="terminos.html" target="_blank" class="underline hover:text-white">Ver Términos</a>.
-                                </p>
+                                <div class="mt-8">
+                                    <a href="#contacto" class="block w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold rounded-full shadow-lg transform hover:scale-105 transition animate-bounce text-sm uppercase tracking-wide">
+                                        Puede evitar esta pérdida
+                                    </a>
+                                    <p class="mt-3 text-[10px] text-gray-400 flex justify-center gap-1">
+                                        Auditoría inicial.
+                                        <a href="terminos.html" target="_blank" class="underline hover:text-white">Ver Términos</a>.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
